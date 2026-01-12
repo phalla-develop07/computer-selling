@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PC Zone - Selling Strategies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --dark: #111827;
+            --gray: #6b7280;
+            --light: #f9fafb;
+            --light-gray: #f3f4f6;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation - consistent across all pages */
+        nav {
+            background: var(--dark);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav h2 { margin: 0; font-size: 1.6rem; }
+        nav .nav-links { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: var(--primary); }
+
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Strategy Cards Grid */
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .strategy-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.28s ease;
+            position: relative;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .strategy-icon {
+            height: 160px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4.5rem;
+        }
+
+        .strategy-content {
+            padding: 1.8rem 1.8rem 2.2rem;
+        }
+
+        .strategy-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .strategy-description {
+            color: var(--gray);
+            font-size: 1.03rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .tips-list {
+            margin-top: 1.2rem;
+            padding-left: 1.4rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 0.9rem;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .tips-list li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: -1.3rem;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .highlight {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .strategies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>PC Zone</h2>
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="strategies.html">Strategies</a>
+        <a href="login.html" id="logoutBtn">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Proven Selling Strategies</h1>
+        <p>Effective techniques to help you sell more computers faster and with higher profit margins</p>
+    </div>
+
+    <div class="strategies-grid">
+
+        <div class="strategy-card">
+            <div class="strategy-icon"><i class="fas fa-users"></i></div>
+            <div class="strategy-content">
+                <h3 class="strategy-title">1. Know Your Customer Deeply</h3>
+                <p class="strategy-description">Different customers need different solutions. Tailor your approach to their real needs.</p>
+                <ul class="tips-list">
+                    <li>Gamers → Focus on GPU, refresh rate, cooling</li>
+                    <li>Students → Price + portability + battery life</li>
+                    <li>Office → Reliability, warranty, quiet operation</li>
+                    <li>Content Creators → CPU power, RAM, color-accurate display</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-icon"><i class="fas fa-tag"></i></div>
+            <div class="strategy-content">
+                <h3 class="strategy-title">2. Smart Pricing & Bundling</h3>
+                <p class="strategy-description">Price is important, but perceived value is more powerful.</p>
+                <ul class="tips-list">
+                    <li>Create attractive <span class="highlight">bundles</span> (mouse + keyboard + antivirus)</li>
+                    <li>Show <span class="highlight">"Save $120"</span> when buying bundle</li>
+                    <li>Use <span class="highlight">psychological pricing</span> ($999 instead of $1000)</li>
+                    <li>Offer limited-time <span class="highlight">discounts</span> or <span class="highlight">flash sales</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-icon"><i class="fas fa-comment-dots"></i></div>
+            <div class="strategy-content">
+                <h3 class="strategy-title">3. Build Trust & Social Proof</h3>
+                <p class="strategy-description">People buy from people and businesses they trust.</p>
+                <ul class="tips-list">
+                    <li>Show real customer photos & testimonials</li>
+                    <li>Display warranty & return policy clearly</li>
+                    <li>Share <span class="highlight">before/after</span> performance comparisons</li>
+                    <li>Be transparent about used/refurbished units</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="strategy-content">
+                <h3 class="strategy-title">4. Upsell & Cross-sell Effectively</h3>
+                <p class="strategy-description">Small add-ons can significantly increase average order value.</p>
+                <ul class="tips-list">
+                    <li>SSD upgrade +$40 → huge perceived improvement</li>
+                    <li>Extra RAM +$60 → "future-proof" your system</li>
+                    <li>Extended warranty +$80 → peace of mind</li>
+                    <li>Gaming peripherals when selling gaming PC</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-icon"><i class="fas fa-share-alt"></i></div>
+            <div class="strategy-content">
+                <h3 class="strategy-title">5. Use Digital Marketing Smartly</h3>
+                <p class="strategy-description">Reach more customers with low-cost, high-impact channels.</p>
+                <ul class="tips-list">
+                    <li>Post real unboxing & benchmark videos</li>
+                    <li>Create <span class="highlight">"PC for [use case]"</span> comparison guides</li>
+                    <li>Run targeted ads on Facebook/Instagram</li>
+                    <li>Build community on Discord/Telegram/Facebook groups</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="strategy-card">
+            <div class="strategy-icon"><i class="fas fa-handshake"></i></div>
+            <div class="strategy-content">
+                <h3 class="strategy-title">6. After-Sales = Future Sales</h3>
+                <p class="strategy-description">Happy customers become your best salespeople.</p>
+                <ul class="tips-list">
+                    <li>Follow-up 7-10 days after purchase</li>
+                    <li>Offer free optimization/cleaning service</li>
+                    <li>Create referral program (discount for next purchase)</li>
+                    <li>Quick response to any issues → turns problems into loyalty</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Simple auth check
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        window.location.href = 'login.html';
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.removeItem('currentUser');
+    });
+</script>
+
+</body>
+</html>
