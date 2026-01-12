@@ -324,7 +324,7 @@
 
                     localStorage.setItem('currentUser', data.username);
                     showMessage('Login successful! Redirecting...', 'success');
-                    setTimeout(() => location.href = 'home.html', 800);
+                    setTimeout(() => location.href = 'index.html', 800);
                 }
             } catch (err) {
                 showMessage(err.message, 'error');
