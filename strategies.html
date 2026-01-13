@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PC Zone - Selling Strategies</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
-            --dark: #111827;
+            --dark: #868ea0;
             --gray: #6b7280;
             --light: #f9fafb;
             --light-gray: #f3f4f6;
@@ -40,13 +41,43 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
         }
 
-        nav h2 { margin: 0; font-size: 1.6rem; }
-        nav .nav-links { display: flex; gap: 2rem; align-items: center; }
-        nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.2s; }
-        nav a:hover { color: var(--primary); }
+        .logo {
+            width: 140px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+
+        nav h2 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
 
         .container {
             max-width: 1100px;
@@ -83,14 +114,14 @@
             background: white;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.28s ease;
             position: relative;
         }
 
         .strategy-card:hover {
             transform: translateY(-12px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
         .strategy-icon {
@@ -149,131 +180,140 @@
             .strategies-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .page-header h1 {
                 font-size: 2.3rem;
             }
         }
     </style>
 </head>
+
 <body>
 
-<nav>
-    <h2>PC Zone</h2>
-    <div class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="strategies.html">Strategies</a>
-        <a href="index.html" id="logoutBtn">Logout</a>
+    <nav>
+        <div class="logo-container">
+            <!-- Replace this src with your actual logo image path -->
+            <img src="https://png.pngtree.com/png-clipart/20250104/original/pngtree-realistic-laptop-png-image_18720619.png"
+                alt="Computer Future Logo" class="logo">
+            <h2>COMPUTER FUTURE</h2>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="strategies.html">Strategies</a>
+            <a href="index.html" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Proven Selling Strategies</h1>
+            <p>Effective techniques to help you sell more computers faster and with higher profit margins</p>
+        </div>
+
+        <div class="strategies-grid">
+
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-users"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">1. Know Your Customer Deeply</h3>
+                    <p class="strategy-description">Different customers need different solutions. Tailor your approach
+                        to their real needs.</p>
+                    <ul class="tips-list">
+                        <li>Gamers → Focus on GPU, refresh rate, cooling</li>
+                        <li>Students → Price + portability + battery life</li>
+                        <li>Office → Reliability, warranty, quiet operation</li>
+                        <li>Content Creators → CPU power, RAM, color-accurate display</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-tag"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">2. Smart Pricing & Bundling</h3>
+                    <p class="strategy-description">Price is important, but perceived value is more powerful.</p>
+                    <ul class="tips-list">
+                        <li>Create attractive <span class="highlight">bundles</span> (mouse + keyboard + antivirus)</li>
+                        <li>Show <span class="highlight">"Save $120"</span> when buying bundle</li>
+                        <li>Use <span class="highlight">psychological pricing</span> ($999 instead of $1000)</li>
+                        <li>Offer limited-time <span class="highlight">discounts</span> or <span class="highlight">flash
+                                sales</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-comment-dots"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">3. Build Trust & Social Proof</h3>
+                    <p class="strategy-description">People buy from people and businesses they trust.</p>
+                    <ul class="tips-list">
+                        <li>Show real customer photos & testimonials</li>
+                        <li>Display warranty & return policy clearly</li>
+                        <li>Share <span class="highlight">before/after</span> performance comparisons</li>
+                        <li>Be transparent about used/refurbished units</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">4. Upsell & Cross-sell Effectively</h3>
+                    <p class="strategy-description">Small add-ons can significantly increase average order value.</p>
+                    <ul class="tips-list">
+                        <li>SSD upgrade +$40 → huge perceived improvement</li>
+                        <li>Extra RAM +$60 → "future-proof" your system</li>
+                        <li>Extended warranty +$80 → peace of mind</li>
+                        <li>Gaming peripherals when selling gaming PC</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-share-alt"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">5. Use Digital Marketing Smartly</h3>
+                    <p class="strategy-description">Reach more customers with low-cost, high-impact channels.</p>
+                    <ul class="tips-list">
+                        <li>Post real unboxing & benchmark videos</li>
+                        <li>Create <span class="highlight">"PC for [use case]"</span> comparison guides</li>
+                        <li>Run targeted ads on Facebook/Instagram</li>
+                        <li>Build community on Discord/Telegram/Facebook groups</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-handshake"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">6. After-Sales = Future Sales</h3>
+                    <p class="strategy-description">Happy customers become your best salespeople.</p>
+                    <ul class="tips-list">
+                        <li>Follow-up 7-10 days after purchase</li>
+                        <li>Offer free optimization/cleaning service</li>
+                        <li>Create referral program (discount for next purchase)</li>
+                        <li>Quick response to any issues → turns problems into loyalty</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
-</nav>
 
-<div class="container">
-    <div class="page-header">
-        <h1>Proven Selling Strategies</h1>
-        <p>Effective techniques to help you sell more computers faster and with higher profit margins</p>
-    </div>
+    <script>
+        // Simple auth check
+        const currentUser = localStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        }
 
-    <div class="strategies-grid">
-
-        <div class="strategy-card">
-            <div class="strategy-icon"><i class="fas fa-users"></i></div>
-            <div class="strategy-content">
-                <h3 class="strategy-title">1. Know Your Customer Deeply</h3>
-                <p class="strategy-description">Different customers need different solutions. Tailor your approach to their real needs.</p>
-                <ul class="tips-list">
-                    <li>Gamers → Focus on GPU, refresh rate, cooling</li>
-                    <li>Students → Price + portability + battery life</li>
-                    <li>Office → Reliability, warranty, quiet operation</li>
-                    <li>Content Creators → CPU power, RAM, color-accurate display</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="strategy-card">
-            <div class="strategy-icon"><i class="fas fa-tag"></i></div>
-            <div class="strategy-content">
-                <h3 class="strategy-title">2. Smart Pricing & Bundling</h3>
-                <p class="strategy-description">Price is important, but perceived value is more powerful.</p>
-                <ul class="tips-list">
-                    <li>Create attractive <span class="highlight">bundles</span> (mouse + keyboard + antivirus)</li>
-                    <li>Show <span class="highlight">"Save $120"</span> when buying bundle</li>
-                    <li>Use <span class="highlight">psychological pricing</span> ($999 instead of $1000)</li>
-                    <li>Offer limited-time <span class="highlight">discounts</span> or <span class="highlight">flash sales</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="strategy-card">
-            <div class="strategy-icon"><i class="fas fa-comment-dots"></i></div>
-            <div class="strategy-content">
-                <h3 class="strategy-title">3. Build Trust & Social Proof</h3>
-                <p class="strategy-description">People buy from people and businesses they trust.</p>
-                <ul class="tips-list">
-                    <li>Show real customer photos & testimonials</li>
-                    <li>Display warranty & return policy clearly</li>
-                    <li>Share <span class="highlight">before/after</span> performance comparisons</li>
-                    <li>Be transparent about used/refurbished units</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="strategy-card">
-            <div class="strategy-icon"><i class="fas fa-chart-line"></i></div>
-            <div class="strategy-content">
-                <h3 class="strategy-title">4. Upsell & Cross-sell Effectively</h3>
-                <p class="strategy-description">Small add-ons can significantly increase average order value.</p>
-                <ul class="tips-list">
-                    <li>SSD upgrade +$40 → huge perceived improvement</li>
-                    <li>Extra RAM +$60 → "future-proof" your system</li>
-                    <li>Extended warranty +$80 → peace of mind</li>
-                    <li>Gaming peripherals when selling gaming PC</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="strategy-card">
-            <div class="strategy-icon"><i class="fas fa-share-alt"></i></div>
-            <div class="strategy-content">
-                <h3 class="strategy-title">5. Use Digital Marketing Smartly</h3>
-                <p class="strategy-description">Reach more customers with low-cost, high-impact channels.</p>
-                <ul class="tips-list">
-                    <li>Post real unboxing & benchmark videos</li>
-                    <li>Create <span class="highlight">"PC for [use case]"</span> comparison guides</li>
-                    <li>Run targeted ads on Facebook/Instagram</li>
-                    <li>Build community on Discord/Telegram/Facebook groups</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="strategy-card">
-            <div class="strategy-icon"><i class="fas fa-handshake"></i></div>
-            <div class="strategy-content">
-                <h3 class="strategy-title">6. After-Sales = Future Sales</h3>
-                <p class="strategy-description">Happy customers become your best salespeople.</p>
-                <ul class="tips-list">
-                    <li>Follow-up 7-10 days after purchase</li>
-                    <li>Offer free optimization/cleaning service</li>
-                    <li>Create referral program (discount for next purchase)</li>
-                    <li>Quick response to any issues → turns problems into loyalty</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<script>
-    // Simple auth check
-    const currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) {
-        window.location.href = 'index.html';
-    }
-
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-        localStorage.removeItem('currentUser');
-    });
-</script>
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+        });
+    </script>
 
 </body>
+
 </html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PC Zone - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
-            --dark: #111827;
+            --dark: #868ea0;
             --gray: #6b7280;
             --light: #f9fafb;
             --light-gray: #f3f4f6;
@@ -39,7 +40,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .logo {
+            width: 140px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         nav h2 {
@@ -77,8 +91,11 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 60%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
         }
 
         .hero-content {
@@ -128,7 +145,7 @@
         .btn-primary:hover {
             background: var(--light);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .btn-outline {
@@ -137,7 +154,7 @@
         }
 
         .btn-outline:hover {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-3px);
         }
 
@@ -172,7 +189,7 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         .feature-icon {
@@ -191,80 +208,92 @@
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 6rem 1.5rem 4rem; }
-            .cta-buttons { flex-direction: column; }
+            .hero {
+                padding: 6rem 1.5rem 4rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- Navigation -->
-<nav>
-    <h2>PC Zone</h2>
-    <div class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="strategies.html">Strategies</a>
-        <a href="index.html" id="logoutBtn">Logout</a>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Welcome Back, <span id="username-display">User</span>!</h1>
-        <p>Discover the best computers for gaming, work, study, or everyday use — all at great prices.</p>
-        
-        <div class="cta-buttons">
-            <a href="products.html" class="btn btn-primary">
-                <i class="fas fa-shopping-cart"></i> Shop Now
-            </a>
-            <a href="strategies.html" class="btn btn-outline">
-                <i class="fas fa-lightbulb"></i> Selling Tips
-            </a>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <!-- Replace this src with your actual logo image path -->
+            <img src="https://png.pngtree.com/png-clipart/20250104/original/pngtree-realistic-laptop-png-image_18720619.png"
+                alt="Computer Future Logo" class="logo">
+            <h2>COMPUTER FUTURE</h2>
         </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section class="features">
-    <h2 class="section-title">Why Choose PC Zone?</h2>
-    
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-laptop"></i></div>
-            <h3>Quality Hardware</h3>
-            <p>Latest processors, high-speed RAM, and reliable components from trusted brands</p>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="strategies.html">Strategies</a>
+            <a href="index.html" id="logoutBtn">Logout</a>
         </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-tag"></i></div>
-            <h3>Best Prices</h3>
-            <p>Competitive pricing with frequent promotions and bundle deals</p>
-        </div>
-        
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-headset"></i></div>
-            <h3>Support 24/7</h3>
-            <p>Expert customer service and after-sales technical support</p>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<script>
-    // Check authentication & show username
-    const currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) {
-        window.location.href = 'index.html';
-    } else {
-        document.getElementById('username-display').textContent = currentUser;
-    }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome Back, <span id="username-display">User</span>!</h1>
+            <p>Discover the best computers for gaming, work, study, or everyday use — all at great prices.</p>
 
-    // Logout functionality
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-        localStorage.removeItem('currentUser');
-    });
-</script>
+            <div class="cta-buttons">
+                <a href="products.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Shop Now
+                </a>
+                <a href="strategies.html" class="btn btn-outline">
+                    <i class="fas fa-lightbulb"></i> Selling Tips
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Why Choose COMPUTER FUTURE?</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                <h3>Quality Hardware</h3>
+                <p>Latest processors, high-speed RAM, and reliable components from trusted brands</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-tag"></i></div>
+                <h3>Best Prices</h3>
+                <p>Competitive pricing with frequent promotions and bundle deals</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>Support 24/7</h3>
+                <p>Expert customer service and after-sales technical support</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Check authentication & show username
+        const currentUser = localStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        } else {
+            document.getElementById('username-display').textContent = currentUser;
+        }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+        });
+    </script>
 
 </body>
+
 </html>
