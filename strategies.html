@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Selling Strategies</title>
+    <title>COMPUTER FUTURE - Selling Strategies</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
-            --dark: #868ea0;
+            --dark: #1f2937;
             --gray: #6b7280;
             --light: #f9fafb;
             --light-gray: #f3f4f6;
             --success: #10b981;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             background: var(--light);
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Navigation - consistent across all pages */
+        /* Navigation */
         nav {
             background: var(--dark);
             color: white;
@@ -41,30 +36,31 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
+
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
+            gap: 1rem;
         }
 
         .logo {
             width: 140px;
             height: 70px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 12px;
         }
 
-
         nav h2 {
-            margin: 0;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         nav .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.2rem;
             align-items: center;
         }
 
@@ -72,74 +68,159 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.25s ease;
         }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+        nav a:hover { color: var(--primary); }
 
         .container {
-            max-width: 1100px;
-            margin: 3rem auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        .page-header {
+        /* Hero-like Header */
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             text-align: center;
-            margin-bottom: 3.5rem;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            border-radius: 0 0 2rem 2rem;
+            overflow: hidden;
+            margin-bottom: 3rem;
         }
 
-        .page-header h1 {
-            font-size: 2.8rem;
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
             margin-bottom: 1rem;
             font-weight: 800;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 2;
         }
 
-        .page-header p {
-            font-size: 1.25rem;
-            color: var(--gray);
+        .page-hero p {
+            font-size: 1.3rem;
             max-width: 720px;
             margin: 0 auto;
+            opacity: 0.92;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Strategy Cards Grid */
+        /* How to Use Section (now moved below strategies) */
+        .how-to-use {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            margin: 4rem auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 1200px;
+        }
+
+        .how-to-use h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2.2rem;
+            color: var(--primary-dark);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: var(--light-gray);
+            border-radius: 1.2rem;
+            padding: 2rem 1.6rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99,102,241,0.18);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -18px;
+            left: 24px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 15px rgba(99,102,241,0.4);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .step h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.9rem;
+            color: var(--primary-dark);
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Strategies Grid */
         .strategies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 2rem;
+            gap: 2.2rem;
         }
 
         .strategy-card {
             background: white;
-            border-radius: 1rem;
+            border-radius: 1.2rem;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.28s ease;
-            position: relative;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
 
         .strategy-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 55px rgba(0,0,0,0.14);
         }
 
         .strategy-icon {
-            height: 160px;
+            height: 170px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 4.5rem;
+            font-size: 5rem;
         }
 
         .strategy-content {
-            padding: 1.8rem 1.8rem 2.2rem;
+            padding: 2rem;
         }
 
         .strategy-title {
-            font-size: 1.45rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--dark);
@@ -147,28 +228,31 @@
 
         .strategy-description {
             color: var(--gray);
-            font-size: 1.03rem;
-            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
         }
 
         .tips-list {
-            margin-top: 1.2rem;
-            padding-left: 1.4rem;
+            margin-top: 1rem;
+            padding-left: 0;
+            list-style: none;
         }
 
         .tips-list li {
             margin-bottom: 0.9rem;
             position: relative;
+            padding-left: 1.8rem;
             color: var(--dark);
         }
 
         .tips-list li::before {
-            content: "•";
-            color: var(--primary);
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--success);
             position: absolute;
-            left: -1.3rem;
-            font-size: 1.6rem;
-            line-height: 1;
+            left: 0;
+            top: 2px;
         }
 
         .highlight {
@@ -177,13 +261,8 @@
         }
 
         @media (max-width: 768px) {
-            .strategies-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header h1 {
-                font-size: 2.3rem;
-            }
+            .strategies-grid { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2.4rem; }
         }
     </style>
 </head>
@@ -192,9 +271,8 @@
 
     <nav>
         <div class="logo-container">
-            <!-- Replace this src with your actual logo image path -->
             <img src="https://png.pngtree.com/png-clipart/20250104/original/pngtree-realistic-laptop-png-image_18720619.png"
-                alt="Computer Future Logo" class="logo">
+                 alt="Computer Future Logo" class="logo">
             <h2>COMPUTER FUTURE</h2>
         </div>
         <div class="nav-links">
@@ -206,24 +284,24 @@
     </nav>
 
     <div class="container">
-        <div class="page-header">
+        <!-- Hero-like Header -->
+        <div class="page-hero">
             <h1>Proven Selling Strategies</h1>
-            <p>Effective techniques to help you sell more computers faster and with higher profit margins</p>
+            <p>Master the art of selling computers faster and more profitably</p>
         </div>
 
+        <!-- Strategies Grid (now appears first) -->
         <div class="strategies-grid">
-
             <div class="strategy-card">
                 <div class="strategy-icon"><i class="fas fa-users"></i></div>
                 <div class="strategy-content">
                     <h3 class="strategy-title">1. Know Your Customer Deeply</h3>
-                    <p class="strategy-description">Different customers need different solutions. Tailor your approach
-                        to their real needs.</p>
+                    <p class="strategy-description">Different customers have different needs. Tailor your pitch to match.</p>
                     <ul class="tips-list">
-                        <li>Gamers → Focus on GPU, refresh rate, cooling</li>
-                        <li>Students → Price + portability + battery life</li>
-                        <li>Office → Reliability, warranty, quiet operation</li>
-                        <li>Content Creators → CPU power, RAM, color-accurate display</li>
+                        <li>Gamers → Highlight GPU, refresh rate, cooling</li>
+                        <li>Students → Focus on price, portability, battery</li>
+                        <li>Office users → Emphasize reliability, warranty, quiet operation</li>
+                        <li>Content creators → Sell CPU power, RAM, color accuracy</li>
                     </ul>
                 </div>
             </div>
@@ -231,13 +309,13 @@
             <div class="strategy-card">
                 <div class="strategy-icon"><i class="fas fa-tag"></i></div>
                 <div class="strategy-content">
-                    <h3 class="strategy-title">2. Smart Pricing & Additional</h3>
-                    <p class="strategy-description">Price is important, but perceived value is more powerful.</p>
+                    <h3 class="strategy-title">2. Smart Pricing & Bundling</h3>
+                    <p class="strategy-description">Price matters — but perceived value wins every time.</p>
                     <ul class="tips-list">
-                        <li>Create attractive <span class="highlight">additional materials</span> (mouse + keyboard + antivirus)</li>
-                        <li>Show <span class="highlight">"Save $120"</span> when buying bundle</li>
-                        <li>Use <span class="highlight">psychological pricing</span> ($999 instead of $1000)</li>
-                        <li>Offer limited-time <span class="highlight">discounts</span> or <span class="highlight">additional materials</span></li>
+                        <li>Bundle mouse + keyboard + antivirus → show "Save $120"</li>
+                        <li>Use psychological pricing: $999 instead of $1,000</li>
+                        <li>Run limited-time flash sales or bundle discounts</li>
+                        <li>Offer free setup or delivery for higher-value orders</li>
                     </ul>
                 </div>
             </div>
@@ -245,13 +323,13 @@
             <div class="strategy-card">
                 <div class="strategy-icon"><i class="fas fa-comment-dots"></i></div>
                 <div class="strategy-content">
-                    <h3 class="strategy-title">3. Build Trust & References</h3>
-                    <p class="strategy-description">People buy from people and businesses they trust.</p>
+                    <h3 class="strategy-title">3. Build Trust & Credibility</h3>
+                    <p class="strategy-description">Buyers trust transparent and reliable sellers.</p>
                     <ul class="tips-list">
-                        <li>Show real customer photos & testimonials if possible</li>
-                        <li>Display warranty & return policy clearly</li>
-                        <li>Share <span class="highlight">before/after</span> performance comparisons</li>
-                        <li>Tell the real brand of product and its specifications</li>
+                        <li>Show real customer photos & testimonials</li>
+                        <li>Clearly display warranty & return policy</li>
+                        <li>Share before/after performance comparisons</li>
+                        <li>Be honest about brand and full specifications</li>
                     </ul>
                 </div>
             </div>
@@ -259,13 +337,13 @@
             <div class="strategy-card">
                 <div class="strategy-icon"><i class="fas fa-chart-line"></i></div>
                 <div class="strategy-content">
-                    <h3 class="strategy-title">4. Encourage to buy the best add-ons</h3>
-                    <p class="strategy-description">Small add-ons can significantly increase average order value.</p>
+                    <h3 class="strategy-title">4. Upsell Add-ons Smartly</h3>
+                    <p class="strategy-description">Small extras can dramatically increase your average order value.</p>
                     <ul class="tips-list">
-                        <li>SSD upgrade +$40 → huge perceived improvement</li>
-                        <li>Extra RAM +$60 → "future-performance" your system</li>
-                        <li>Extended warranty +$80 → peace of mind</li>
-                        <li>Recommend accessaries needs to complete the setup</li>
+                        <li>SSD upgrade (+$40) → massive perceived speed boost</li>
+                        <li>Extra RAM (+$60) → "future-proof" your system</li>
+                        <li>Extended warranty (+$80) → peace of mind</li>
+                        <li>Recommend full setup accessories (mouse, keyboard, headset)</li>
                     </ul>
                 </div>
             </div>
@@ -273,13 +351,13 @@
             <div class="strategy-card">
                 <div class="strategy-icon"><i class="fas fa-share-alt"></i></div>
                 <div class="strategy-content">
-                    <h3 class="strategy-title">5. Use Digital Marketing Smartly</h3>
-                    <p class="strategy-description">Reach more customers with low-cost, high-impact channels.</p>
+                    <h3 class="strategy-title">5. Master Digital Marketing</h3>
+                    <p class="strategy-description">Reach thousands with low-cost, high-impact online channels.</p>
                     <ul class="tips-list">
-                        <li>Post real unboxing & how the product is opened or tested in real performance videos</li>
-                        <li>Create <span class="highlight">"PC for [use case]"</span> comparison guides video</li>
-                        <li>Create own page on popular platform like Facebook/Instagram</li>
-                        <li>Build community on Discord/Telegram/Facebook groups</li>
+                        <li>Post real unboxing + real-world performance videos</li>
+                        <li>Create "Best PC for [use case]" comparison guides</li>
+                        <li>Build presence on Facebook, Instagram, Telegram groups</li>
+                        <li>Engage in local tech communities & forums</li>
                     </ul>
                 </div>
             </div>
@@ -288,16 +366,53 @@
                 <div class="strategy-icon"><i class="fas fa-handshake"></i></div>
                 <div class="strategy-content">
                     <h3 class="strategy-title">6. After-Sales = Future Sales</h3>
-                    <p class="strategy-description">Happy customers become your best salespeople.</p>
+                    <p class="strategy-description">Happy buyers become your best promoters.</p>
                     <ul class="tips-list">
-                        <li>Follow-up 7-10 days after sold-out</li>
-                        <li>Offer free optimization/cleaning service</li>
-                        <li>Discount for next purchase of old customers</li>
-                        <li>Quick response to any issues → turns problems into loyalty</li>
+                        <li>Follow up 7–10 days after purchase</li>
+                        <li>Offer free optimization or cleaning service</li>
+                        <li>Give discount for next purchase to loyal customers</li>
+                        <li>Respond quickly to issues → turn problems into loyalty</li>
                     </ul>
                 </div>
             </div>
+        </div>
 
+        <!-- How to Use Section (moved here — below strategies) -->
+        <div class="how-to-use">
+            <h2>How to Use COMPUTER FUTURE</h2>
+            <p style="margin-bottom: 2.5rem; color: var(--gray); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Follow these 4 simple steps to start buying or selling computers on our platform today!
+            </p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                    <h3>Create / Login Account</h3>
+                    <p>Sign up or log in with a username and password — quick and secure access to all features.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Browse Products</h3>
+                    <p>Explore our wide range of computers. Use search and filters to find exactly what you need.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-cart-plus"></i></div>
+                    <h3>Buy or Learn to Sell</h3>
+                    <p>Click Buy Now for instant purchase, or study these strategies to sell your own devices profitably.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Confirm & Track Orders</h3>
+                    <p>Confirm orders in seconds. View your purchase history anytime in "My Orders".</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -314,5 +429,4 @@
     </script>
 
 </body>
-
 </html>
