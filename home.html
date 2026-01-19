@@ -78,7 +78,6 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 8rem 2rem 6rem;
@@ -86,17 +85,29 @@
             overflow: hidden;
         }
 
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
             max-width: 900px;
             margin: 0 auto;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -360,6 +371,10 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="./videos/cover-bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="hero-content">
             <h1>Welcome Back, <span id="username-display">User</span>!</h1>
             <p>Discover the best computers for gaming, work, study, or everyday use — all at great prices.</p>
