@@ -1,64 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Login or register to PC Zone - Your computer store" />
-    <title>PC Zone - Login / Register</title>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        media="print" onload="this.media='all'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Login or register to COMPUTER FUTURE - Your trusted computer store"/>
+    <title>COMPUTER FUTURE - Login / Register</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'"/>
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
-            --dark: #111827;
+            --dark: #1f2937;
             --gray: #6b7280;
-            --light: #f9fafb;
+            --light: #ffffff;
+            --light-gray: #f8fafc;
+            --bg-soft: #f0f4ff;
             --danger: #ef4444;
             --success: #10b981;
             --warning: #f59e0b;
+            --input-border: #d1d5db;
+            --input-focus: rgba(99, 102, 241, 0.2);
         }
 
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
 
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-soft);
             min-height: 100dvh;
             display: grid;
             place-items: center;
-            padding: 1rem;
+            padding: 1.5rem;
             color: var(--dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            pointer-events: none;
         }
 
         .youtube-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+            inset: 0;
+            z-index: -1;
             overflow: hidden;
         }
 
@@ -66,38 +46,39 @@
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: cover;
         }
 
         .auth-container {
-            background: white;
-            padding: clamp(1.8rem, 5vw, 2.8rem) clamp(1.5rem, 4vw, 2.2rem);
-            border-radius: 1.2rem;
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+            background: var(--light);
+            padding: clamp(2rem, 5vw, 3rem) clamp(1.8rem, 5vw, 2.5rem);
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 50px -15px rgba(0,0,0,0.12);
             width: 100%;
-            max-width: 460px;
+            max-width: 480px;
             position: relative;
             z-index: 2;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 2.2rem;
+            margin-bottom: 2.4rem;
             color: var(--primary-dark);
-            font-size: clamp(1.9rem, 5.5vw, 2.4rem);
+            font-size: clamp(2rem, 5.5vw, 2.5rem);
             font-weight: 700;
         }
 
         .form-group {
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.8rem;
             position: relative;
         }
 
         label {
             display: block;
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.6rem;
             font-weight: 500;
             color: var(--gray);
-            font-size: 0.96rem;
+            font-size: 0.98rem;
         }
 
         .input-wrapper {
@@ -106,42 +87,52 @@
 
         input {
             width: 100%;
-            padding: 0.95rem 1rem 0.95rem 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 0.7rem;
-            font-size: 1.03rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            padding: 1rem 1.1rem;
+            border: 2px solid var(--input-border);
+            border-radius: 0.8rem;
+            font-size: 1.05rem;
+            transition: all 0.25s ease;
+            background: var(--light-gray);
         }
 
         input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+            box-shadow: 0 0 0 4px var(--input-focus);
+            background: white;
         }
 
         .toggle-password {
             position: absolute;
-            right: 1rem;
+            right: 1.1rem;
             top: 50%;
             transform: translateY(-50%);
             background: none;
             border: none;
             color: var(--gray);
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+        }
+
+        input:valid:not(:placeholder-shown) {
+            border-color: var(--success);
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border-color: var(--danger);
         }
 
         .error-message {
             color: var(--danger);
-            font-size: 0.84rem;
-            margin-top: 0.4rem;
+            font-size: 0.86rem;
+            margin-top: 0.45rem;
             min-height: 1.3em;
         }
 
         .strength-bar {
-            height: 4px;
-            margin-top: 0.5rem;
-            border-radius: 2px;
+            height: 5px;
+            margin-top: 0.6rem;
+            border-radius: 3px;
             background: #e5e7eb;
             overflow: hidden;
         }
@@ -152,35 +143,28 @@
             transition: width 0.4s ease, background 0.4s ease;
         }
 
-        .strength-weak {
-            background: var(--danger);
-        }
-
-        .strength-medium {
-            background: var(--warning);
-        }
-
-        .strength-strong {
-            background: var(--success);
-        }
+        .strength-weak   { background: var(--danger); }
+        .strength-medium { background: var(--warning); }
+        .strength-strong { background: var(--success); }
 
         .btn {
             width: 100%;
-            padding: 1.05rem;
-            margin-top: 1.3rem;
+            padding: 1.15rem;
+            margin-top: 1.5rem;
             background: var(--primary);
             color: white;
             border: none;
-            border-radius: 0.7rem;
-            font-size: 1.12rem;
+            border-radius: 0.9rem;
+            font-size: 1.15rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.22s ease;
+            transition: all 0.25s ease;
         }
 
         .btn:hover:not(:disabled) {
             background: var(--primary-dark);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.25);
         }
 
         .btn:disabled {
@@ -190,9 +174,9 @@
 
         .toggle-link {
             text-align: center;
-            margin-top: 1.6rem;
+            margin-top: 1.8rem;
             color: var(--gray);
-            font-size: 0.97rem;
+            font-size: 1rem;
         }
 
         .toggle-link a {
@@ -201,14 +185,12 @@
             text-decoration: none;
         }
 
-        .toggle-link a:hover {
-            text-decoration: underline;
-        }
+        .toggle-link a:hover { text-decoration: underline; }
 
         .extra-links {
             text-align: center;
-            margin-top: 1.4rem;
-            font-size: 0.94rem;
+            margin-top: 1.6rem;
+            font-size: 0.96rem;
         }
 
         .extra-links a {
@@ -216,42 +198,25 @@
             text-decoration: none;
         }
 
-        .extra-links a:hover {
-            text-decoration: underline;
-        }
+        .extra-links a:hover { text-decoration: underline; }
 
         .message {
             text-align: center;
-            margin: 1.3rem 0;
-            padding: 0.9rem;
-            border-radius: 0.6rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 0.8rem;
             font-weight: 500;
         }
 
-        .success {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .error {
-            background: #fee2e2;
-            color: #991b1b;
-        }
+        .success { background: #d1fae5; color: #065f46; }
+        .error   { background: #fee2e2; color: #991b1b; }
 
         @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-                transform: none !important;
-            }
+            *, *::before, *::after { transition: none !important; transform: none !important; }
         }
 
         @media (max-width: 480px) {
-            .auth-container {
-                padding: 1.6rem 1.3rem;
-            }
+            .auth-container { padding: 1.8rem 1.4rem; }
         }
     </style>
 </head>
@@ -259,7 +224,7 @@
 <body>
 
     <div class="youtube-bg">
-        <iframe src="https://www.youtube.com/embed/ww_JG3VH9q8?autoplay=1&mute=1&loop=1&playlist=ww_JG3VH9q8&controls=0&modestbranding=1" allow="autoplay" title="Background Video"></iframe>
+        <iframe src="https://www.youtube.com/embed/ww_JG3VH9q8?autoplay=1&mute=1&loop=1&playlist=ww_JG3VH9q8&controls=0&modestbranding=1&rel=0" allow="autoplay" title="Background Video"></iframe>
     </div>
 
     <div class="auth-container">
@@ -268,16 +233,14 @@
         <form id="authForm" novalidate>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter username" required
-                    autocomplete="username" autofocus />
+                <input type="text" id="username" name="username" placeholder="Enter username" required autocomplete="username" autofocus/>
                 <div class="error-message" id="usernameError"></div>
             </div>
 
             <div id="registerFields" hidden>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="your.email@example.com"
-                        autocomplete="email" />
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" autocomplete="email"/>
                     <div class="error-message" id="emailError"></div>
                 </div>
             </div>
@@ -285,9 +248,8 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <div class="input-wrapper">
-                    <input type="password" id="password" name="password" placeholder="••••••••" required
-                        autocomplete="current-password" />
-                    <button type="button" class="toggle-password" id="togglePassword" tabindex="-1">
+                    <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password"/>
+                    <button type="button" class="toggle-password" id="togglePassword">
                         <i class="far fa-eye"></i>
                     </button>
                 </div>
@@ -299,12 +261,16 @@
 
             <div class="form-group" id="confirmGroup" hidden>
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" />
+                <div class="input-wrapper">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password"/>
+                    <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                        <i class="far fa-eye"></i>
+                    </button>
+                </div>
                 <div class="error-message" id="confirmError"></div>
             </div>
 
-            <button type="submit" class="btn" id="submitBtn">
-                Sign In</button>
+            <button type="submit" class="btn" id="submitBtn">Sign In</button>
         </form>
 
         <div class="toggle-link">
@@ -335,12 +301,14 @@
             password: document.getElementById('password'),
             confirmPassword: document.getElementById('confirmPassword'),
             togglePasswordBtn: document.getElementById('togglePassword'),
+            toggleConfirmBtn: document.getElementById('toggleConfirmPassword'),
             strengthBar: document.getElementById('strengthBar'),
             strengthFill: document.getElementById('strengthFill')
         };
 
         let isRegisterMode = false;
         let passwordVisible = false;
+        let confirmVisible = false;
 
         const toggleMode = () => {
             isRegisterMode = !isRegisterMode;
@@ -348,8 +316,8 @@
             els.title.textContent = isRegisterMode ? 'Create Your Account' : 'Welcome Back';
             els.submitBtn.textContent = isRegisterMode ? 'Sign Up' : 'Sign In';
             els.toggleText.innerHTML = isRegisterMode
-                ? `Already have an account? <a href="index.html">Sign In</a>`
-                : `Don't have an account? <a href="#">Sign Up</a>`;
+                ? `Already have an account? <a href="#">Sign In</a>`
+                : `Don't have an account? <a href="#">Register now</a>`;
 
             els.registerFields.hidden = !isRegisterMode;
             els.confirmGroup.hidden = !isRegisterMode;
@@ -363,6 +331,7 @@
             document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
             els.message.className = 'message';
             els.message.textContent = '';
+            document.querySelectorAll('input').forEach(input => input.classList.remove('valid', 'invalid'));
         };
 
         const setError = (id, msg) => {
@@ -382,15 +351,13 @@
             if (/[^A-Za-z0-9]/.test(val)) strength++;
 
             els.strengthBar.hidden = val.length === 0;
-            els.strengthFill.style.width = strength * 20 + '%';
+            els.strengthFill.style.width = `${strength * 25}%`;
 
-            if (strength <= 1) {
-                els.strengthFill.className = 'strength-fill strength-weak';
-            } else if (strength <= 3) {
-                els.strengthFill.className = 'strength-fill strength-medium';
-            } else {
-                els.strengthFill.className = 'strength-fill strength-strong';
-            }
+            els.strengthFill.className = 'strength-fill ' + (
+                strength <= 1 ? 'strength-weak' :
+                strength <= 3 ? 'strength-medium' :
+                'strength-strong'
+            );
         };
 
         const validateForm = () => {
@@ -421,7 +388,7 @@
                     setError('emailError', 'Email is required');
                     valid = false;
                 } else if (!/\S+@\S+\.\S+/.test(email)) {
-                    setError('emailError', 'Please enter a valid email address');
+                    setError('emailError', 'Please enter a valid email');
                     valid = false;
                 }
 
@@ -442,8 +409,7 @@
             els.message.textContent = text;
         };
 
-        // ─── Event Listeners ─────────────────────────────────────────────
-
+        // Event Listeners
         els.toggleModeLink.addEventListener('click', e => {
             e.preventDefault();
             toggleMode();
@@ -457,6 +423,16 @@
                 : '<i class="far fa-eye"></i>';
         });
 
+        if (els.toggleConfirmBtn) {
+            els.toggleConfirmBtn.addEventListener('click', () => {
+                confirmVisible = !confirmVisible;
+                els.confirmPassword.type = confirmVisible ? 'text' : 'password';
+                els.toggleConfirmBtn.innerHTML = confirmVisible
+                    ? '<i class="far fa-eye-slash"></i>'
+                    : '<i class="far fa-eye"></i>';
+            });
+        }
+
         els.password.addEventListener('input', updatePasswordStrength);
 
         els.form.addEventListener('submit', e => {
@@ -468,7 +444,6 @@
             els.submitBtn.disabled = true;
             els.submitBtn.textContent = isRegisterMode ? 'Creating account…' : 'Signing in…';
 
-            // Simulated delay (replace with real fetch later)
             setTimeout(() => {
                 try {
                     let users = JSON.parse(localStorage.getItem('users') || '{}');
@@ -488,7 +463,7 @@
                         localStorage.setItem('currentUser', data.username);
 
                         showMessage('Account created successfully! Redirecting…', 'success');
-                        setTimeout(() => location.href = 'home.html', 1100);
+                        setTimeout(() => location.href = 'home.html', 1200);
                     } else {
                         const user = users[data.username];
                         if (!user) {
@@ -508,9 +483,8 @@
                     els.submitBtn.disabled = false;
                     els.submitBtn.textContent = isRegisterMode ? 'Sign Up' : 'Sign In';
                 }
-            }, 500);
+            }, 600);
         });
     </script>
 </body>
-
 </html>

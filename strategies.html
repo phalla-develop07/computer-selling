@@ -9,11 +9,12 @@
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
-            --dark: #1f2937;
+            --dark: #a0a7b2;
             --gray: #6b7280;
             --light: #f9fafb;
             --light-gray: #f3f4f6;
             --success: #10b981;
+            --danger: #ef4444;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +26,6 @@
             line-height: 1.7;
         }
 
-        /* Navigation */
         nav {
             background: var(--dark);
             color: white;
@@ -53,9 +53,8 @@
         }
 
         nav h2 {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         nav .nav-links {
@@ -79,7 +78,6 @@
             padding: 0 1.5rem;
         }
 
-        /* Hero-like Header */
         .page-hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -116,76 +114,6 @@
             z-index: 2;
         }
 
-        /* How to Use Section (now moved below strategies) */
-        .how-to-use {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
-            margin: 4rem auto;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            max-width: 1200px;
-        }
-
-        .how-to-use h2 {
-            font-size: 2.2rem;
-            margin-bottom: 2.2rem;
-            color: var(--primary-dark);
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .step {
-            background: var(--light-gray);
-            border-radius: 1.2rem;
-            padding: 2rem 1.6rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(99,102,241,0.18);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -18px;
-            left: 24px;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.4rem;
-            box-shadow: 0 6px 15px rgba(99,102,241,0.4);
-        }
-
-        .step-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-
-        .step h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.9rem;
-            color: var(--primary-dark);
-        }
-
-        .step p {
-            color: var(--gray);
-            font-size: 1rem;
-        }
-
-        /* Strategies Grid */
         .strategies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -260,6 +188,75 @@
             font-weight: 600;
         }
 
+        /* How to Use Section */
+        .how-to-use {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            margin: 4rem auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 1200px;
+        }
+
+        .how-to-use h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2.2rem;
+            color: var(--primary-dark);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: var(--light-gray);
+            border-radius: 1.2rem;
+            padding: 2rem 1.6rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99,102,241,0.18);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -18px;
+            left: 24px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 15px rgba(99,102,241,0.4);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .step h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.9rem;
+            color: var(--primary-dark);
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
         @media (max-width: 768px) {
             .strategies-grid { grid-template-columns: 1fr; }
             .page-hero h1 { font-size: 2.4rem; }
@@ -290,8 +287,9 @@
             <p>Master the art of selling computers faster and more profitably</p>
         </div>
 
-        <!-- Strategies Grid (now appears first) -->
+        <!-- Strategies Grid -->
         <div class="strategies-grid">
+
             <div class="strategy-card">
                 <div class="strategy-icon"><i class="fas fa-users"></i></div>
                 <div class="strategy-content">
@@ -375,9 +373,27 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- ── NEW: Financial Strategies ── -->
+            <div class="strategy-card">
+                <div class="strategy-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="strategy-content">
+                    <h3 class="strategy-title">7. Financial & Profit Strategies</h3>
+                    <p class="strategy-description">Protect your cash flow and maximize real profit — not just sales volume.</p>
+                    <ul class="tips-list">
+                        <li>Keep 30–40% gross margin minimum (after cost + shipping + tax)</li>
+                        <li>Offer installment plans via partner banks → close more sales</li>
+                        <li>Use "limited stock" + countdown timer to create urgency</li>
+                        <li>Track every expense (advertising, delivery, returns) weekly</li>
+                        <li>Reinvest 20–30% of profit into better stock or marketing</li>
+                        <li>Avoid deep discounts — better to bundle or add value</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
-        <!-- How to Use Section (moved here — below strategies) -->
+        <!-- How to Use Section (kept below strategies) -->
         <div class="how-to-use">
             <h2>How to Use COMPUTER FUTURE</h2>
             <p style="margin-bottom: 2.5rem; color: var(--gray); max-width: 800px; margin-left: auto; margin-right: auto;">
