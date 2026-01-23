@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Login or register to COMPUTER FUTURE - Your trusted computer store"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login or register to COMPUTER FUTURE - Your trusted computer store" />
     <title>COMPUTER FUTURE - Login / Register</title>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'"/>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        media="print" onload="this.media='all'" />
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
             --dark: #1f2937;
-            --gray: #6b7280;
-            --light: #ffffff;
-            --light-gray: #f8fafc;
+            --gray: #ffffff;
+            --light: #9d9d9d59;
+            --light-gray: #f8fafc4e;
             --bg-soft: #f0f4ff;
             --danger: #ef4444;
             --success: #10b981;
             --warning: #f59e0b;
-            --input-border: #d1d5db;
+            --input-border: #8b8b8b;
             --input-focus: rgba(99, 102, 241, 0.2);
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -53,7 +61,7 @@
             background: var(--light);
             padding: clamp(2rem, 5vw, 3rem) clamp(1.8rem, 5vw, 2.5rem);
             border-radius: 1.5rem;
-            box-shadow: 0 20px 50px -15px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.12);
             width: 100%;
             max-width: 480px;
             position: relative;
@@ -93,13 +101,14 @@
             font-size: 1.05rem;
             transition: all 0.25s ease;
             background: var(--light-gray);
+            color: white;
         }
 
         input:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 4px var(--input-focus);
-            background: white;
+            background: rgba(255, 255, 255, 0.233);
         }
 
         .toggle-password {
@@ -143,9 +152,17 @@
             transition: width 0.4s ease, background 0.4s ease;
         }
 
-        .strength-weak   { background: var(--danger); }
-        .strength-medium { background: var(--warning); }
-        .strength-strong { background: var(--success); }
+        .strength-weak {
+            background: var(--danger);
+        }
+
+        .strength-medium {
+            background: var(--warning);
+        }
+
+        .strength-strong {
+            background: var(--success);
+        }
 
         .btn {
             width: 100%;
@@ -164,7 +181,7 @@
         .btn:hover:not(:disabled) {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(99,102,241,0.25);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
         }
 
         .btn:disabled {
@@ -185,7 +202,9 @@
             text-decoration: none;
         }
 
-        .toggle-link a:hover { text-decoration: underline; }
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
 
         .extra-links {
             text-align: center;
@@ -198,7 +217,9 @@
             text-decoration: none;
         }
 
-        .extra-links a:hover { text-decoration: underline; }
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
 
         .message {
             text-align: center;
@@ -208,15 +229,30 @@
             font-weight: 500;
         }
 
-        .success { background: #d1fae5; color: #065f46; }
-        .error   { background: #fee2e2; color: #991b1b; }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { transition: none !important; transform: none !important; }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                transform: none !important;
+            }
         }
 
         @media (max-width: 480px) {
-            .auth-container { padding: 1.8rem 1.4rem; }
+            .auth-container {
+                padding: 1.8rem 1.4rem;
+            }
         }
     </style>
 </head>
@@ -224,7 +260,9 @@
 <body>
 
     <div class="youtube-bg">
-        <iframe src="https://www.youtube.com/embed/ww_JG3VH9q8?autoplay=1&mute=1&loop=1&playlist=ww_JG3VH9q8&controls=0&modestbranding=1&rel=0" allow="autoplay" title="Background Video"></iframe>
+        <iframe
+            src="https://www.youtube.com/embed/ww_JG3VH9q8?autoplay=1&mute=1&loop=1&playlist=ww_JG3VH9q8&controls=0&modestbranding=1&rel=0"
+            allow="autoplay" title="Background Video"></iframe>
     </div>
 
     <div class="auth-container">
@@ -233,14 +271,16 @@
         <form id="authForm" novalidate>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter username" required autocomplete="username" autofocus/>
+                <input type="text" id="username" name="username" placeholder="Enter username" required
+                    autocomplete="username" autofocus />
                 <div class="error-message" id="usernameError"></div>
             </div>
 
             <div id="registerFields" hidden>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="your.email@example.com" autocomplete="email"/>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                        autocomplete="email" />
                     <div class="error-message" id="emailError"></div>
                 </div>
             </div>
@@ -248,7 +288,8 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <div class="input-wrapper">
-                    <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password"/>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required
+                        autocomplete="current-password" />
                     <button type="button" class="toggle-password" id="togglePassword">
                         <i class="far fa-eye"></i>
                     </button>
@@ -262,7 +303,7 @@
             <div class="form-group" id="confirmGroup" hidden>
                 <label for="confirmPassword">Confirm Password</label>
                 <div class="input-wrapper">
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password"/>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" />
                     <button type="button" class="toggle-password" id="toggleConfirmPassword">
                         <i class="far fa-eye"></i>
                     </button>
@@ -274,7 +315,9 @@
         </form>
 
         <div class="toggle-link">
-            <span id="toggleText">Don't have an account? <a href="#" id="toggleMode">Register now</a></span>
+            <span id="toggleText">
+                Don't have an account? <a href="#" id="toggleMode">Sign up</a>
+            </span>
         </div>
 
         <div class="extra-links">
@@ -316,8 +359,8 @@
             els.title.textContent = isRegisterMode ? 'Create Your Account' : 'Welcome Back';
             els.submitBtn.textContent = isRegisterMode ? 'Sign Up' : 'Sign In';
             els.toggleText.innerHTML = isRegisterMode
-                ? `Already have an account? <a href="#">Sign In</a>`
-                : `Don't have an account? <a href="#">Register now</a>`;
+                ? `Already registered? <a href="index.html" id="toggleMode">Sign in here</a>`
+                : `New user? <a href="#" id="toggleMode">Create free account</a>`;
 
             els.registerFields.hidden = !isRegisterMode;
             els.confirmGroup.hidden = !isRegisterMode;
@@ -355,8 +398,8 @@
 
             els.strengthFill.className = 'strength-fill ' + (
                 strength <= 1 ? 'strength-weak' :
-                strength <= 3 ? 'strength-medium' :
-                'strength-strong'
+                    strength <= 3 ? 'strength-medium' :
+                        'strength-strong'
             );
         };
 
@@ -487,4 +530,5 @@
         });
     </script>
 </body>
+
 </html>
